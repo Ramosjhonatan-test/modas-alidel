@@ -1,4 +1,6 @@
-/* Variables CSS para modo claro y oscuro */
+/* ============================================
+   VARIABLES CSS PARA MODO CLARO Y OSCURO
+   ============================================ */
 :root {
     /* Modo claro (valores por defecto) */
     --color-blanco: #ffffff;
@@ -38,7 +40,42 @@
     --sombra-fuerte: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-/* Reset y estilos generales */
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes logoPulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes logoShine {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(200%); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heroLogoFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-15px) scale(1.05); }
+}
+
+@keyframes heroLogoGlow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+/* ============================================
+   RESET Y ESTILOS GENERALES
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -103,6 +140,22 @@ a {
     color: var(--color-negro);
 }
 
+.btn-hero {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-oscuro) 100%);
+    border: none;
+    box-shadow: 0 5px 20px rgba(196, 167, 71, 0.4), 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: var(--transicion);
+}
+
+.btn-hero:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(196, 167, 71, 0.6), 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, var(--color-dorado-oscuro) 0%, var(--color-dorado) 100%);
+}
+
 section {
     padding: 80px 0;
 }
@@ -137,56 +190,261 @@ section {
     margin: 0 auto;
 }
 
-/* Header */
+/* ============================================
+   HEADER Y LOGO PRINCIPAL
+   ============================================ */
 header {
     background-color: var(--color-blanco);
-    box-shadow: var(--sombra-suave);
+    box-shadow: var(--sombra-media);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     transition: var(--transicion);
+    padding: 15px 0;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 0 20px;
 }
 
-.logo-container {
+/* Logo Principal */
+.logo-main-container {
+    flex: 1;
     display: flex;
     align-items: center;
 }
 
-.logo-img {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-    border-radius: 50%;
-    object-fit: cover;
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
 }
 
-.logo-text {
+.logo-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    overflow: visible;
+    animation: logoFloat 4s ease-in-out infinite;
+    z-index: 10;
+    background: radial-gradient(circle at 30% 30%, var(--color-dorado) 0%, var(--color-dorado-oscuro) 100%);
+    box-shadow: 0 0 30px rgba(196, 167, 71, 0.4), 0 0 60px rgba(196, 167, 71, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.3);
+    border: 3px solid var(--color-dorado);
+    transition: var(--transicion);
+}
+
+.logo-circle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(196, 167, 71, 0.6), 0 0 80px rgba(196, 167, 71, 0.3), inset 0 0 25px rgba(255, 255, 255, 0.4);
+    animation-play-state: paused;
+}
+
+.logo-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    transition: var(--transicion);
+}
+
+.logo-circle:hover .logo-main-img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Efectos del logo */
+.logo-glow-effect {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: radial-gradient(circle, rgba(196, 167, 71, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: logoPulse 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+.logo-shine-effect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+    transform: rotate(45deg);
+    animation: logoShine 5s ease-in-out infinite;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.logo-sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    top: 20px;
+    right: 20px;
+    animation: sparkle 2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Texto del logo */
+.logo-text-main {
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
-.logo-jmar {
-    font-size: 1.4rem;
-    letter-spacing: 2px;
+.logo-jmar-main {
+    font-size: 2.2rem;
     font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--color-dorado);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(196, 167, 71, 0.3);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+.logo-alidel-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.logo-modas {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 6px;
+    color: var(--color-texto);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.logo-alidel-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--color-negro);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.logo-tagline {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--color-gris-medio);
+    margin-top: 5px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   SELECTOR DE IDIOMA
+   ============================================ */
+.language-selector {
+    position: relative;
+    z-index: 1002;
+}
+
+.language-btn {
+    display: flex;
+    align-items: center;
+    background: var(--color-blanco);
+    border: 1px solid var(--color-gris-claro);
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: var(--transicion);
+    font-size: 0.9rem;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.language-btn:hover {
+    border-color: var(--color-dorado);
+    background-color: var(--color-gris-claro);
+}
+
+.flag-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    object-fit: cover;
+    border: 1px solid var(--color-gris-claro);
+}
+
+.language-btn span {
+    margin-right: 5px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.language-btn i {
+    font-size: 0.8rem;
+    transition: var(--transicion);
+}
+
+.language-selector:hover .language-btn i {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-blanco);
+    border-radius: 8px;
+    box-shadow: var(--sombra-media);
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transicion);
+    z-index: 1003;
+    overflow: hidden;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 15px;
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: var(--transicion);
+    text-align: left;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background-color: var(--color-gris-claro);
     color: var(--color-dorado);
 }
 
-.logo-alidel {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    margin-top: 3px;
-    color: var(--color-texto-secundario);
+.language-option span {
+    flex-grow: 1;
 }
 
+/* ============================================
+   CONTROLES DE NAVEGACIÓN
+   ============================================ */
 .nav-controls {
     display: flex;
     align-items: center;
@@ -233,75 +491,179 @@ header {
     background-color: var(--color-gris-claro);
 }
 
+/* ============================================
+   NAVEGACIÓN PRINCIPAL
+   ============================================ */
 nav ul {
     display: flex;
     list-style: none;
+    gap: 30px;
 }
 
 nav li {
-    margin-left: 30px;
+    position: relative;
 }
 
 nav a {
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    padding: 10px 0;
+    color: var(--color-texto);
+    transition: var(--transicion);
     position: relative;
-    padding: 5px 0;
 }
 
 nav a::after {
     content: '';
     position: absolute;
     width: 0;
-    height: 1px;
+    height: 2px;
     background-color: var(--color-dorado);
     bottom: 0;
     left: 0;
     transition: var(--transicion);
 }
 
+nav a:hover {
+    color: var(--color-dorado);
+}
+
 nav a:hover::after {
     width: 100%;
 }
 
-/* Hero Section */
+/* ============================================
+   HERO SECTION
+   ============================================ */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--color-blanco);
-    margin-top: 90px;
+    margin-top: 130px;
+    padding: 80px 0;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    color: var(--color-blanco);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+/* Logo en el hero */
+.hero-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
 }
 
-.hero p {
-    font-size: 1.2rem;
+.hero-logo-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    overflow: visible;
+    background: radial-gradient(circle at 30% 30%, rgba(196, 167, 71, 0.9) 0%, rgba(178, 148, 53, 0.7) 100%);
+    box-shadow: 0 0 50px rgba(196, 167, 71, 0.6), 0 0 100px rgba(196, 167, 71, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.4);
+    border: 4px solid rgba(196, 167, 71, 0.8);
+    animation: heroLogoFloat 5s ease-in-out infinite;
+}
+
+.hero-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 25px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.hero-logo-glow {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(196, 167, 71, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: heroLogoGlow 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+.hero-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-logo-jmar {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: var(--color-dorado);
+    text-shadow: 0 0 20px rgba(196, 167, 71, 0.7), 0 0 40px rgba(196, 167, 71, 0.4);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+.hero-logo-alidel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-logo-alidel span:first-child {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 8px;
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.hero-logo-alidel span:last-child {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    margin: 30px 0 20px;
+    color: var(--color-blanco);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
     margin-bottom: 40px;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     opacity: 0.9;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 1px;
 }
 
-/* Categorías */
+/* ============================================
+   SECCIÓN CATEGORÍAS
+   ============================================ */
 .categories {
     background-color: var(--color-crema);
 }
@@ -355,7 +717,9 @@ nav a:hover::after {
     color: var(--color-texto-secundario);
 }
 
-/* Catálogo */
+/* ============================================
+   SECCIÓN CATÁLOGO
+   ============================================ */
 .catalog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -433,7 +797,9 @@ nav a:hover::after {
     font-size: 0.8rem;
 }
 
-/* Destacados */
+/* ============================================
+   SECCIÓN DESTACADOS
+   ============================================ */
 .featured {
     background-color: var(--color-beige);
 }
@@ -511,7 +877,9 @@ nav a:hover::after {
     align-self: flex-start;
 }
 
-/* Testimonios */
+/* ============================================
+   SECCIÓN TESTIMONIOS
+   ============================================ */
 .testimonials {
     background-color: var(--color-crema);
 }
@@ -582,7 +950,9 @@ nav a:hover::after {
     color: var(--color-texto-secundario);
 }
 
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
     background-color: var(--color-negro);
     color: var(--color-gris-claro);
@@ -602,18 +972,67 @@ footer {
     flex-direction: column;
 }
 
+/* Logo en footer */
 .footer-logo {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    gap: 15px;
 }
 
-.logo-img-small {
-    width: 50px;
-    height: 50px;
-    margin-right: 15px;
+.footer-logo-circle {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 30% 30%, rgba(196, 167, 71, 0.8) 0%, rgba(178, 148, 53, 0.6) 100%);
+    box-shadow: 0 0 20px rgba(196, 167, 71, 0.4);
+    border: 2px solid rgba(196, 167, 71, 0.6);
+}
+
+.footer-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+}
+
+.footer-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.footer-logo-jmar {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-dorado);
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-logo-alidel {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.footer-logo-modas {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--color-blanco);
+    text-transform: uppercase;
+}
+
+.footer-logo-alidel-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-blanco);
+    text-transform: uppercase;
 }
 
 .footer-about p {
@@ -702,40 +1121,72 @@ footer {
     color: var(--color-gris-medio);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .hero h1 {
-        font-size: 2.8rem;
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1100px) {
+    .logo-circle {
+        width: 85px;
+        height: 85px;
     }
     
-    .section-title h2 {
-        font-size: 2.2rem;
+    .logo-jmar-main {
+        font-size: 1.8rem;
     }
     
-    .featured-product {
-        flex-direction: column;
+    .logo-modas {
+        font-size: 0.95rem;
+        letter-spacing: 4px;
     }
     
-    .featured-img, .featured-details {
-        width: 100%;
+    .logo-alidel-text {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
     }
     
-    .featured-img {
-        height: 250px;
+    nav ul {
+        gap: 20px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .header-container {
-        padding: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .logo-main-container {
+        order: 1;
+        flex: 1 0 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .logo-wrapper {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .logo-text-main {
+        align-items: center;
     }
     
     .nav-controls {
+        order: 2;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    
+    nav {
         order: 3;
+        flex: 1 0 100%;
     }
     
     nav ul {
         display: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
         position: absolute;
         top: 100%;
         left: 0;
@@ -760,15 +1211,113 @@ footer {
     }
     
     .hero {
+        margin-top: 180px;
+    }
+    
+    .hero-logo-circle {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .hero-logo-jmar {
+        font-size: 2.8rem;
+    }
+    
+    .hero-logo-alidel span:first-child {
+        font-size: 1.5rem;
+    }
+    
+    .hero-logo-alidel span:last-child {
+        font-size: 1.8rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .featured-product {
+        flex-direction: column;
+    }
+    
+    .featured-img, .featured-details {
+        width: 100%;
+    }
+    
+    .featured-img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .logo-jmar-main {
+        font-size: 1.5rem;
+    }
+    
+    .logo-modas {
+        font-size: 0.8rem;
+        letter-spacing: 3px;
+    }
+    
+    .logo-alidel-text {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+    }
+    
+    .logo-tagline {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero {
         margin-top: 80px;
     }
     
-    .hero h1 {
-        font-size: 2.3rem;
+    .hero-logo-circle {
+        width: 100px;
+        height: 100px;
     }
     
-    section {
-        padding: 60px 0;
+    .hero-logo-jmar {
+        font-size: 2.2rem;
+    }
+    
+    .hero-logo-alidel span:first-child {
+        font-size: 1.2rem;
+    }
+    
+    .hero-logo-alidel span:last-child {
+        font-size: 1.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .language-btn span {
+        display: none;
+    }
+    
+    .language-btn {
+        min-width: 50px;
+        justify-content: center;
+        padding: 8px 10px;
+    }
+    
+    .language-btn i {
+        margin-left: 0;
+    }
+    
+    .language-dropdown {
+        min-width: 120px;
     }
     
     .product-actions {
@@ -777,8 +1326,42 @@ footer {
 }
 
 @media (max-width: 576px) {
-    .hero h1 {
+    .logo-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo-text-main {
+        align-items: center;
+    }
+    
+    .hero {
+        margin-top: 200px;
+    }
+    
+    .hero-logo-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .hero-logo-jmar {
+        font-size: 1.8rem;
+    }
+    
+    .hero-logo-alidel span:first-child {
+        font-size: 1rem;
+    }
+    
+    .hero-logo-alidel span:last-child {
+        font-size: 1.2rem;
+    }
+    
+    .hero-title {
         font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
     .section-title h2 {
@@ -793,16 +1376,7 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    .logo-img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .logo-jmar {
-        font-size: 1.2rem;
-    }
-    
-    .logo-alidel {
-        font-size: 0.75rem;
+    section {
+        padding: 60px 0;
     }
 }
