@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body class="light-mode">
-    <!-- Header Rediseñado -->
+    <!-- ============================================
+         HEADER
+    ============================================= -->
     <header>
         <div class="container header-container">
-            <!-- Logo Principal Mejorado -->
+            <!-- Logo Principal -->
             <div class="logo-main-container">
                 <div class="logo-wrapper">
                     <div class="logo-circle">
@@ -32,9 +35,9 @@
                 </div>
             </div>
             
-            <!-- Controles de navegación -->
+            <!-- Controles de Navegación -->
             <div class="nav-controls">
-                <!-- Selector de idioma -->
+                <!-- Selector de Idioma -->
                 <div class="language-selector" id="language-selector">
                     <button class="language-btn" id="current-language" aria-label="Cambiar idioma">
                         <img src="bolivia.png" alt="Español" class="flag-icon">
@@ -53,12 +56,12 @@
                     </div>
                 </div>
                 
-                <!-- Botón tema oscuro/claro -->
+                <!-- Botón Tema Claro/Oscuro -->
                 <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
                     <i class="fas fa-moon"></i>
                 </button>
                 
-                <!-- Menú móvil -->
+                <!-- Botón Menú Móvil -->
                 <button class="mobile-menu-btn" id="mobile-menu" aria-label="Menú móvil">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -78,11 +81,13 @@
         </div>
     </header>
 
-    <!-- Hero Section - Más minimalista para destacar el logo -->
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
-                <!-- Logo también en el hero para mayor impacto -->
+                <!-- Logo en Hero -->
                 <div class="hero-logo">
                     <div class="hero-logo-circle">
                         <img src="logo.png" alt="MODAS ALIDEL" class="hero-logo-img">
@@ -107,8 +112,9 @@
         </div>
     </section>
 
-    <!-- ... (resto del HTML se mantiene igual) ... -->
-    <!-- Categorías -->
+    <!-- ============================================
+         SECCIÓN CATEGORÍAS
+    ============================================= -->
     <section class="categories" id="categorias">
         <div class="container">
             <div class="section-title">
@@ -117,6 +123,7 @@
             </div>
             
             <div class="categories-grid">
+                <!-- Categoría 1: Damas -->
                 <div class="category-card">
                     <div class="category-img">
                         <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Moda para Damas">
@@ -127,6 +134,7 @@
                     </div>
                 </div>
                 
+                <!-- Categoría 2: Varones -->
                 <div class="category-card">
                     <div class="category-img">
                         <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Moda para Varones">
@@ -137,6 +145,7 @@
                     </div>
                 </div>
                 
+                <!-- Categoría 3: Juvenil -->
                 <div class="category-card">
                     <div class="category-img">
                         <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Moda Juvenil">
@@ -147,6 +156,7 @@
                     </div>
                 </div>
                 
+                <!-- Categoría 4: Accesorios -->
                 <div class="category-card">
                     <div class="category-img">
                         <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1776&q=80" alt="Accesorios">
@@ -160,7 +170,9 @@
         </div>
     </section>
 
-    <!-- Catálogo -->
+    <!-- ============================================
+         SECCIÓN CATÁLOGO
+    ============================================= -->
     <section class="catalog" id="catalogo">
         <div class="container">
             <div class="section-title">
@@ -170,7 +182,7 @@
             
             <div class="catalog-grid">
                 <!-- Producto 1 -->
-                <div class="product-card">
+                <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Vestido Elegante">
                         <span class="product-badge" data-es="Nuevo" data-pt="Novo">Nuevo</span>
@@ -183,10 +195,10 @@
                             <a href="#" class="btn" data-es="Añadir al carrito" data-pt="Adicionar ao carrinho">Añadir al carrito</a>
                         </div>
                     </div>
-                </div>
+                </article>
                 
                 <!-- Producto 2 -->
-                <div class="product-card">
+                <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&auto=format&fit=crop&w=1625&q=80" alt="Traje Formal">
                         <span class="product-badge" data-es="Oferta" data-pt="Oferta">Oferta</span>
@@ -199,10 +211,10 @@
                             <a href="#" class="btn" data-es="Añadir al carrito" data-pt="Adicionar ao carrinho">Añadir al carrito</a>
                         </div>
                     </div>
-                </div>
+                </article>
                 
                 <!-- Producto 3 -->
-                <div class="product-card">
+                <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Abrigo Invierno">
                     </div>
@@ -214,10 +226,10 @@
                             <a href="#" class="btn" data-es="Añadir al carrito" data-pt="Adicionar ao carrinho">Añadir al carrito</a>
                         </div>
                     </div>
-                </div>
+                </article>
                 
                 <!-- Producto 4 -->
-                <div class="product-card">
+                <article class="product-card">
                     <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Blusa Seda">
                     </div>
@@ -229,12 +241,14 @@
                             <a href="#" class="btn" data-es="Añadir al carrito" data-pt="Adicionar ao carrinho">Añadir al carrito</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Destacados -->
+    <!-- ============================================
+         SECCIÓN DESTACADOS
+    ============================================= -->
     <section class="featured" id="destacados">
         <div class="container">
             <div class="section-title">
@@ -243,7 +257,8 @@
             </div>
             
             <div class="featured-products">
-                <div class="featured-product">
+                <!-- Producto Destacado 1 -->
+                <article class="featured-product">
                     <div class="featured-img">
                         <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1636&q=80" alt="Vestido de Gala">
                     </div>
@@ -257,9 +272,10 @@
                         <p class="featured-price" data-price="179.99">Bs. 179.99</p>
                         <a href="#" class="btn" data-es="Comprar Ahora" data-pt="Comprar Agora">Comprar Ahora</a>
                     </div>
-                </div>
+                </article>
                 
-                <div class="featured-product">
+                <!-- Producto Destacado 2 -->
+                <article class="featured-product">
                     <div class="featured-img">
                         <img src="https://images.unsplash.com/photo-1594938374184-f7f3f9c47191?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Chaqueta Cuero">
                     </div>
@@ -273,12 +289,14 @@
                         <p class="featured-price" data-price="199.99">Bs. 199.99</p>
                         <a href="#" class="btn" data-es="Comprar Ahora" data-pt="Comprar Agora">Comprar Ahora</a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios -->
+    <!-- ============================================
+         SECCIÓN TESTIMONIOS
+    ============================================= -->
     <section class="testimonials" id="testimonios">
         <div class="container">
             <div class="section-title">
@@ -287,7 +305,8 @@
             </div>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <!-- Testimonio 1 -->
+                <article class="testimonial-card">
                     <div class="testimonial-text">
                         <p data-es="La calidad de las prendas de MODAS ALIDEL es excepcional. Cada detalle está cuidado al máximo. Definitivamente mi marca de ropa favorita."
                            data-pt="A qualidade das roupas da MODAS ALIDEL é excepcional. Cada detalhe é cuidado ao máximo. Definitivamente minha marca de roupa favorita.">
@@ -303,9 +322,10 @@
                             <p data-es="Cliente desde 2020" data-pt="Cliente desde 2020">Cliente desde 2020</p>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="testimonial-card">
+                <!-- Testimonio 2 -->
+                <article class="testimonial-card">
                     <div class="testimonial-text">
                         <p data-es="El vestido que compré para mi graduación fue perfecto. Recibí muchos cumplidos. La atención al cliente también es excelente."
                            data-pt="O vestido que comprei para minha formatura foi perfeito. Recebi muitos elogios. O atendimento ao cliente também é excelente.">
@@ -321,9 +341,10 @@
                             <p data-es="Cliente desde 2021" data-pt="Cliente desde 2021">Cliente desde 2021</p>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="testimonial-card">
+                <!-- Testimonio 3 -->
+                <article class="testimonial-card">
                     <div class="testimonial-text">
                         <p data-es="La chaqueta de cuero que compré superó mis expectativas. La atención al detalle y la calidad son incomparables. Totalmente recomendado."
                            data-pt="A jaqueta de couro que comprei superou minhas expectativas. A atenção aos detalhes e a qualidade são incomparáveis. Totalmente recomendado.">
@@ -339,33 +360,27 @@
                             <p data-es="Cliente desde 2019" data-pt="Cliente desde 2019">Cliente desde 2019</p>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
     <footer id="contacto">
         <div class="container">
             <div class="footer-content">
+                <!-- Información de la Empresa -->
                 <div class="footer-about">
-                    <div class="footer-logo">
-                        <!-- Logo animado en el footer -->
-                        <div class="logo-circle-small">
-                            <img src="logo.png" alt="MODAS ALIDEL" class="logo-img-small">
-                            <div class="logo-glow-small"></div>
-                        </div>
-                        <div class="logo-text">
-                            <span class="logo-jmar">JMAR</span>
-                            <span class="logo-alidel">MODAS ALIDEL</span>
-                        </div>
-                    </div>
+ 
                     <p data-es="MODAS ALIDEL es una marca de ropa exclusiva que combina elegancia, estilo y calidad en cada prenda. Nuestro objetivo es ofrecer moda sofisticada para personas exigentes."
                        data-pt="MODAS ALIDEL é uma marca de roupas exclusiva que combina elegância, estilo e qualidade em cada peça. Nosso objetivo é oferecer moda sofisticada para pessoas exigentes.">
                        MODAS ALIDEL es una marca de ropa exclusiva que combina elegancia, estilo y calidad en cada prenda. Nuestro objetivo es ofrecer moda sofisticada para personas exigentes.
                     </p>
                 </div>
                 
+                <!-- Enlaces Rápidos -->
                 <div class="footer-links">
                     <h3 data-es="Enlaces Rápidos" data-pt="Links Rápidos">Enlaces Rápidos</h3>
                     <ul>
@@ -378,21 +393,24 @@
                     </ul>
                 </div>
                 
+                <!-- Información de Contacto -->
                 <div class="footer-contact">
                     <h3 data-es="Contacto" data-pt="Contato">Contacto</h3>
                     <p><i class="fas fa-map-marker-alt"></i> <span data-es="Av. Moda 123, Ciudad Elegante" data-pt="Av. Moda 123, Cidade Elegante">Av. Moda 123, Ciudad Elegante</span></p>
                     <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
                     <p><i class="fas fa-envelope"></i> info@modasalidel.com</p>
                     
+                    <!-- Redes Sociales -->
                     <div class="social-icons">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
             
+            <!-- Copyright -->
             <div class="copyright">
                 <p data-es="&copy; 2026 MODAS ALIDEL. Todos los derechos reservados."
                    data-pt="&copy; 2026 MODAS ALIDEL. Todos os direitos reservados.">
@@ -402,6 +420,9 @@
         </div>
     </footer>
 
+    <!-- ============================================
+         SCRIPTS
+    ============================================= -->
     <script src="script.js"></script>
 </body>
 </html>
