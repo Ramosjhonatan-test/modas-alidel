@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODAS ALIDEL - Catálogo de Ropa Exclusiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <!-- Logo - reemplazar con tu archivo logo.png -->
+                <img src="logo.png" alt="MODAS ALIDEL" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-jmar">JMAR</span>
+                    <span class="logo-alidel">MODAS ALIDEL</span>
+                </div>
+            </div>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu" aria-label="Menú móvil">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#categorias">Categorías</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#destacados">Destacados</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Moda Exclusiva para Ti</h1>
+                <p>Descubre nuestra colección premium de prendas cuidadosamente seleccionadas, donde la elegancia y el estilo se encuentran en cada detalle.</p>
+                <a href="#catalogo" class="btn">Ver Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="categories" id="categorias">
+        <div class="container">
+            <div class="section-title">
+                <h2>Categorías</h2>
+                <p>Explora nuestras colecciones exclusivas</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Moda para Damas">
+                    </div>
+                    <div class="category-info">
+                        <h3>Damas</h3>
+                        <p>Colección exclusiva para mujer</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Moda para Varones">
+                    </div>
+                    <div class="category-info">
+                        <h3>Varones</h3>
+                        <p>Estilo y elegancia para hombre</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Moda Juvenil">
+                    </div>
+                    <div class="category-info">
+                        <h3>Juvenil</h3>
+                        <p>Tendencias para la nueva generación</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1776&q=80" alt="Accesorios">
+                    </div>
+                    <div class="category-info">
+                        <h3>Accesorios</h3>
+                        <p>Complementos para completar tu estilo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="catalog" id="catalogo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Catálogo Destacado</h2>
+                <p>Nuestras prendas más exclusivas</p>
+            </div>
+            
+            <div class="catalog-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Vestido Elegante">
+                        <span class="product-badge">Nuevo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Elegante Noche</h3>
+                        <p class="product-price">$89.99</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline">Ver más</a>
+                            <a href="#" class="btn">Añadir al carrito</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&auto=format&fit=crop&w=1625&q=80" alt="Traje Formal">
+                        <span class="product-badge">Oferta</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Traje Formal Clásico</h3>
+                        <p class="product-price">$149.99</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline">Ver más</a>
+                            <a href="#" class="btn">Añadir al carrito</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Abrigo Invierno">
+                    </div>
+                    <div class="product-info">
+                        <h3>Abrigo de Invierno Premium</h3>
+                        <p class="product-price">$129.99</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline">Ver más</a>
+                            <a href="#" class="btn">Añadir al carrito</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80" alt="Blusa Seda">
+                    </div>
+                    <div class="product-info">
+                        <h3>Blusa de Seda Natural</h3>
+                        <p class="product-price">$69.99</p>
+                        <div class="product-actions">
+                            <a href="#" class="btn btn-outline">Ver más</a>
+                            <a href="#" class="btn">Añadir al carrito</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados -->
+    <section class="featured" id="destacados">
+        <div class="container">
+            <div class="section-title">
+                <h2>Prendas Recomendadas</h2>
+                <p>Las favoritas de nuestros clientes</p>
+            </div>
+            
+            <div class="featured-products">
+                <div class="featured-product">
+                    <div class="featured-img">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1636&q=80" alt="Vestido de Gala">
+                    </div>
+                    <div class="featured-details">
+                        <span class="featured-badge">Más Vendido</span>
+                        <h3>Vestido de Gala Dorado</h3>
+                        <p>Vestido largo con detalles metálicos y acabados premium. Perfecto para ocasiones especiales.</p>
+                        <p class="featured-price">$179.99</p>
+                        <a href="#" class="btn">Comprar Ahora</a>
+                    </div>
+                </div>
+                
+                <div class="featured-product">
+                    <div class="featured-img">
+                        <img src="https://images.unsplash.com/photo-1594938374184-f7f3f9c47191?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80" alt="Chaqueta Cuero">
+                    </div>
+                    <div class="featured-details">
+                        <span class="featured-badge">Recomendado</span>
+                        <h3>Chaqueta de Cuero Premium</h3>
+                        <p>Chaqueta de cuero genuino con forro interior suave. Diseño atemporal y de alta calidad.</p>
+                        <p class="featured-price">$199.99</p>
+                        <a href="#" class="btn">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios de Clientes</h2>
+                <p>Lo que dicen nuestros clientes</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>La calidad de las prendas de MODAS ALIDEL es excepcional. Cada detalle está cuidado al máximo. Definitivamente mi marca de ropa favorita.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana Martínez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Martínez</h4>
+                            <p>Cliente desde 2020</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>El vestido que compré para mi graduación fue perfecto. Recibí muchos cumplidos. La atención al cliente también es excelente.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Carlos López">
+                        </div>
+                        <div class="author-info">
+                            <h4>Carlos López</h4>
+                            <p>Cliente desde 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>La chaqueta de cuero que compré superó mis expectativas. La atención al detalle y la calidad son incomparables. Totalmente recomendado.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="María Fernández">
+                        </div>
+                        <div class="author-info">
+                            <h4>María Fernández</h4>
+                            <p>Cliente desde 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <!-- Logo en el footer -->
+                        <img src="logo.png" alt="MODAS ALIDEL" class="logo-img-small">
+                        <div class="logo-text">
+                            <span class="logo-jmar">JMAR</span>
+                            <span class="logo-alidel">MODAS ALIDEL</span>
+                        </div>
+                    </div>
+                    <p>MODAS ALIDEL es una marca de ropa exclusiva que combina elegancia, estilo y calidad en cada prenda. Nuestro objetivo es ofrecer moda sofisticada para personas exigentes.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#categorias">Categorías</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#destacados">Destacados</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Moda 123, Ciudad Elegante</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@modasalidel.com</p>
+                    
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 MODAS ALIDEL. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
